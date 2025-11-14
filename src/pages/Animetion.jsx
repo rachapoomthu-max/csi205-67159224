@@ -21,7 +21,7 @@ const Animation = () => {
   const [vy, setVy] = useState(10);
 
   const ballRef = useRef();
-  const buttons = ["None","Basketball","Football","Voleyball","Cartoon","Human","Logo"];
+  const buttons = ["None", "Basketball", "Football", "Voleyball", "Cartoon", "Human", "Logo"];
 
   // การเคลื่อนที่ของลูกบอล
   useEffect(() => {
@@ -74,28 +74,36 @@ const Animation = () => {
           ballRef.current.style.backgroundColor = "black";
           break;
         case "Basketball":
-          ballRef.current.style.backgroundImage = "url('/pic/Basketball.svg')";
+          ballRef.current.style.backgroundImage = "none";
+          ballRef.current.style.backgroundColor = "orange";
           break;
         case "Football":
-          ballRef.current.style.backgroundImage = "url('public/pic/volleyball-ball.jpg')";
+          ballRef.current.style.backgroundImage = "none";
+          ballRef.current.style.backgroundColor = "white";
           break;
         case "Voleyball":
-          ballRef.current.style.backgroundImage = "url('public/pic/Basketball.svg')";
+          ballRef.current.style.backgroundImage = "none";
+          ballRef.current.style.backgroundColor = "yellow";
           break;
         case "Cartoon":
-          ballRef.current.style.backgroundImage = "url('public/pic/conan.jpg')";
+          ballRef.current.style.backgroundImage = "none";
+          ballRef.current.style.backgroundColor = "pink";
           break;
         case "Human":
-          ballRef.current.style.backgroundImage = "url('public/pic/human.jpg')";
+          ballRef.current.style.backgroundImage = "none";
+          ballRef.current.style.backgroundColor = "brown";
           break;
         case "Logo":
-          ballRef.current.style.backgroundImage = "url('public/pic/Red and Black Pizza Restaurant Logo.png')";
+          ballRef.current.style.backgroundImage = "none";
+          ballRef.current.style.backgroundColor = "red";
           break;
         default:
           ballRef.current.style.backgroundImage = "none";
+          ballRef.current.style.backgroundColor = "black";
       }
     }
   }, [x, y, selectedButton]);
+
 
   const handleRun = () => setRunning(!running);
   const handleSelect = (name) => {
@@ -158,7 +166,7 @@ const Animation = () => {
           {buttons.map(btn => (
             <button
               key={btn}
-              className={`btn ${selectedButton === btn 
+              className={`btn ${selectedButton === btn
                 ? (btn === "None" ? "btn-secondary" : "btn-primary")
                 : (btn === "None" ? "btn-outline-secondary" : "btn-outline-primary")}`}
               onClick={() => handleSelect(btn)}

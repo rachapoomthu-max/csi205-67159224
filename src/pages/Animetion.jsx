@@ -74,7 +74,7 @@ const Animation = () => {
           ballRef.current.style.backgroundColor = "black";
           break;
         case "Basketball":
-          ballRef.current.style.backgroundImage = "url('public/pic/Basketball.svg')";
+          ballRef.current.style.backgroundImage = "url('/pic/Basketball.svg')";
           break;
         case "Football":
           ballRef.current.style.backgroundImage = "url('public/pic/volleyball-ball.jpg')";
